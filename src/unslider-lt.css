@@ -1,0 +1,73 @@
+.unslider-style {
+	position: relative;
+	overflow: auto;
+}
+
+.unslider-style li {
+	list-style: none;
+}
+
+.unslider-style ul li {
+	float: left;
+	line-height: 80px;
+}
+
+.unslider-style ul li a {
+	text-decoration: none;
+}
+
+.unslider-style ul {
+	padding: 0;
+	margin: 0;
+}
+
+.unslider-style ul li .label { 
+	background-color: black;
+	width: 100%;
+	margin-top: -40px;
+	-moz-opacity: 0.8;
+	opacity: 0.8;
+	filter: alpha(opacity=80);
+}
+
+.unslider-style ul li .label p {
+	margin:0 0 0 15px;
+	line-height: 40px;
+	color: white;
+}
+
+.unslider-style .dots {
+	display: inline-block;
+	margin-top: -12px;
+	padding-right: 10px;
+	float: right;
+	bottom: 20px;
+	position: relative;
+	z-index: 999;
+}
+
+.unslider-style .dots li {
+display: inline-block;
+	color:white;
+	font-size: 12px;
+	font-weight: bold;
+	line-height: 18px;
+	text-align: center;
+	width: 18px;
+	height: 18px;
+	margin: 0 4px;
+	border: 2px solid white;
+	border-radius: 12px;
+	cursor: pointer;
+	-moz-opacity: 0.8;
+	opacity: 0.8;
+	filter: alpha(opacity=80);
+	-webkit-transition: background .5s, opacity .5s;
+	-moz-transition: background .5s, opacity .5s;
+	transition: background .5s, opacity .5s;
+}
+
+.unslider-style .dots li.active {
+	background: white;
+	color: black;
+}
