@@ -3,8 +3,7 @@
  *   Contributors:
  *   - @ShamoX
  *
- * Unslider-lt取消宽度自适应特性，请自定义宽高，应与模板调用轮播图的尺寸一致。
- * 
+ *	Unlider-li @Ikaros Wu
  */
 
 
@@ -15,8 +14,6 @@
 
 		//  Set some options
 		_.o = {
-			width:600,		// image width
-			height:480,		// image height
 			speed: 500,     // animation speed, false for no transition (integer or boolean)
 			delay: 3000,    // delay between slides, false for no autoplay (integer or boolean)
 			init: 0,        // init delay, false for no delay (integer or boolean)
@@ -41,9 +38,25 @@
 			_.o = $.extend(_.o, o);
 			_.el = el;
 			_.ul = el.find(_.o.items);
-			_.max = [ _.o.width, _.o.height ];
+			_.max = [el.outerWidth() | 0, el.outerHeight() | 0];
 			_.li = _.ul.find(_.o.item).each(function(index) {
-				var me = $(this)
+				var me = $(this),
+					width = me.outerWidth(),
+					height = me.outerHeight();
+
+				//  Set the max values
+				if (width > _.max[0]) {
+					_.max[0] = width;
+				} else if(_.o.width) {
+					_.max[0] = _.o.width;
+				}
+					
+				if (height > _.max[1]){
+					_.max[1] = height;
+				} else if(_.o.height) {
+					_.max[1] = _.o.height;
+				}
+				 
 			});
 
 
