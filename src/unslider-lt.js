@@ -45,16 +45,17 @@
 					height = me.outerHeight();
 
 				//  Set the max values
-				if (width > _.max[0]) {
-					_.max[0] = width;
-				} else if(_.o.width) {
+				if(_.o.width) {
 					_.max[0] = _.o.width;
+
+				} else if (width > _.max[0]) {
+					_.max[0] = width;
 				}
 					
-				if (height > _.max[1]){
-					_.max[1] = height;
-				} else if(_.o.height) {
+				if(_.o.height) {
 					_.max[1] = _.o.height;
+				} else if (height > _.max[1]){
+					_.max[1] = height;
 				}
 				 
 			});
@@ -70,7 +71,7 @@
 			_.i = 0;
 
 			//  Set the main element
-			el.css({width: _.max[0], height: li.first().outerHeight(), overflow: 'hidden'});
+			el.css({width: _.max[0], height: _.o.height?_.o.height:li.first().outerHeight(), overflow: 'hidden'});
 
 			//  Set the relative widths
 			ul.css({position: 'relative', left: 0, width: (len * 100) + '%'});
@@ -120,7 +121,7 @@
 					_.r && clearTimeout(_.r);
 
 					_.r = setTimeout(function() {
-						var styl = {height: li.eq(_.i).outerHeight()},
+						var styl = {height: _.o.height?_.o.height:li.eq(_.i).outerHeight()},
 							width = el.outerWidth();
 
 						ul.css(styl);
@@ -185,7 +186,7 @@
 
 			var speed = callback ? 5 : o.speed | 0,
 				easing = o.easing,
-				obj = {height: target.outerHeight()};
+				obj = {height: _.o.height?_.o.height:target.outerHeight()};
 
 			if (!ul.queue('fx').length) {
 				//  Handle those pesky dots

@@ -4,6 +4,7 @@
 }
 
 .unslider-style li {
+	height: 100%;
 	list-style: none;
 }
 
@@ -13,7 +14,11 @@
 }
 
 .unslider-style ul li a {
+	height: 100%;
 	text-decoration: none;
+	position:relative;
+	display:block;
+	overflow: hidden;
 }
 
 .unslider-style ul {
@@ -22,12 +27,13 @@
 }
 
 .unslider-style ul li .label { 
-	background-color: black;
-	width: 100%;
-	margin-top: -40px;
 	-moz-opacity: 0.8;
 	opacity: 0.8;
 	filter: alpha(opacity=80);
+	background-color: black;
+	width: 100%;
+	position: absolute;
+	bottom: 0;
 }
 
 .unslider-style ul li .label p {
