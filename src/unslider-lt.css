@@ -55,6 +55,7 @@
 .unslider-style .dots li {
 display: inline-block;
 	color:white;
+	float:left;
 	font-size: 12px;
 	font-weight: bold;
 	line-height: 18px;
